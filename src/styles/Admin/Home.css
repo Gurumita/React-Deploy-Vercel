@@ -42,14 +42,16 @@
 /* Actions container */
 .actions-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-wrap: wrap; /* Allows buttons to wrap onto multiple lines if needed */
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 0.5rem; /* Space between buttons */
     margin-bottom: 2rem;
 }
 
 /* Actions buttons */
 .actions-container button {
-    margin-bottom: 0.5rem;
+    flex: 1 1 auto; /* Allows buttons to grow and shrink as needed */
+    min-width: 120px; /* Ensures buttons have a minimum width */
     padding: 0.75rem 1.5rem;
     font-size: 1.2rem;
     color: #fff;
@@ -58,6 +60,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0.25rem; /* Small margin for spacing */
 }
 
 /* Hover effect for actions buttons */
@@ -163,13 +166,9 @@
         font-size: 1rem;
     }
 
-    .actions-container {
-        align-items: center;
-    }
-
     .actions-container button {
-        width: 100%;
-        margin-bottom: 0.5rem;
+        width: 100%; /* Makes buttons full width on mobile */
+        font-size: 1rem; /* Smaller font size on mobile */
     }
 
     .data-container {
@@ -200,16 +199,9 @@
         font-size: 1.1rem;
     }
 
-    .actions-container {
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin-bottom: 1.5rem;
-    }
-
     .actions-container button {
-        margin-bottom: 0;
-        margin-right: 0.5rem;
+        min-width: auto; /* Remove min-width restriction */
+        font-size: 1.1rem; /* Slightly larger font size */
     }
 
     .data-container {
