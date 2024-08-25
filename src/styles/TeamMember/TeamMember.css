@@ -1,0 +1,140 @@
+/* Main container for team member page */
+.tm-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start off-screen */
+    animation: fadeInUp 0.5s ease forwards; /* Animation added */
+}
+
+/* Navbar styling */
+.tm-navbar {
+    display: flex;
+    justify-content: space-between; /* Space between left and right aligned items */
+    align-items: center; /* Vertically align items */
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color: #333;
+    padding: 1rem;
+    transition: background-color 0.3s ease; /* Transition added */
+}
+
+/* Navbar items (left and right sections) */
+.tm-navbar-left,
+.tm-navbar-right {
+    display: flex;
+    align-items: center; /* Vertically align items */
+}
+
+.tm-navbar-left {
+    flex: 1; /* Take up available space on the left */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.tm-navbar-right {
+    flex: 1; /* Take up available space on the right */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Navbar items */
+.tm-nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.75rem; /* Adjusted spacing for better alignment */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition added */
+}
+
+.tm-nav-item:hover {
+    color: #f0f8ff; /* Light blue color on hover */
+    text-decoration: underline;
+}
+
+/* Logout button styling */
+.tm-logout-button {
+    background-color: #f44336;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem; /* Adjusted padding for consistency */
+    cursor: pointer;
+    margin: 0 0.75rem; /* Adjusted spacing for better alignment */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition added */
+}
+
+.tm-logout-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.tm-content {
+    flex: 1;
+    padding: 2rem;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start off-screen */
+    animation: fadeInUp 0.5s 0.3s ease forwards; /* Animation added with delay */
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .tm-navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .tm-nav-item, .tm-logout-button {
+        margin: 0.5rem 0;
+    }
+
+    .tm-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (Portrait and Landscape) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .tm-navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.75rem;
+    }
+
+    .tm-nav-item, .tm-logout-button {
+        margin: 0.5rem;
+    }
+
+    .tm-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Desktops and larger screens */
+@media (min-width: 1025px) {
+    .tm-navbar {
+        padding: 1rem;
+    }
+
+    .tm-nav-item, .tm-logout-button {
+        margin: 0.5rem 1rem;
+    }
+
+    .tm-content {
+        padding: 2rem;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

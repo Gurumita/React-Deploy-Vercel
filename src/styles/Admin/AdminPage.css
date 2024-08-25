@@ -1,0 +1,186 @@
+/* Main container for admin page */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start off-screen */
+    animation: fadeInUp 0.5s ease forwards; /* Animation added */
+}
+
+/* Navbar styling */
+.admin-navbar {
+    display: flex;
+    font-size: 1.145rem;
+    font-weight: 400;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    padding: 1rem;
+    transition: background-color 0.3s ease; /* Transition added */
+}
+
+.admin-nav-item {
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 1rem;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition added */
+}
+
+.admin-nav-item:hover {
+    color: #f0f8ff; /* Light blue color on hover */
+    text-decoration: underline;
+}
+
+.admin-logout-button {
+    background-color: #f44336;
+    display: flex;
+    font-size: 1.03rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transition added */
+}
+
+.admin-logout-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start off-screen */
+    animation: fadeInUp 0.5s 0.3s ease forwards; /* Animation added with delay */
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+    .admin-navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    .admin-nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .admin-logout-button {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+    }
+
+    .admin-content {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    #message-title {
+        font-size: 1.5rem;
+    }
+
+    .project-name {
+        font-size: 1.2rem;
+    }
+
+    .message-item-header {
+        font-size: 0.9rem;
+    }
+
+    .message-body {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (Portrait and Landscape) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .admin-navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.75rem;
+    }
+
+    .admin-nav-item {
+        margin: 0.5rem 0.75rem;
+    }
+
+    .admin-logout-button {
+        margin: 0.5rem 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .admin-content {
+        padding: 1.5rem;
+    }
+
+    #message-title {
+        font-size: 1.75rem;
+    }
+
+    .project-name {
+        font-size: 1.5rem;
+    }
+
+    .message-item-header {
+        font-size: 1rem;
+    }
+
+    .message-body {
+        font-size: 1rem;
+    }
+}
+
+/* Desktops and larger screens */
+@media (min-width: 1025px) {
+    .admin-navbar {
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+
+    .admin-nav-item {
+        margin: 0.5rem 1rem;
+    }
+
+    .admin-logout-button {
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .admin-content {
+        padding: 2rem;
+    }
+
+    #message-title {
+        font-size: 2rem;
+    }
+
+    .project-name {
+        font-size: 1.75rem;
+    }
+
+    .message-item-header {
+        font-size: 1.1rem;
+    }
+
+    .message-body {
+        font-size: 1.1rem;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

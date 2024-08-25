@@ -1,0 +1,193 @@
+.create-project-container {
+    background-color: #acaab1;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: 30px auto;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.create-project-title {
+    color: #181515;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.create-project-title:hover {
+    color: #161616; /* Change title color on hover */
+}
+
+.create-project-form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.create-project-form:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02); /* Slightly enlarge the form on hover */
+}
+
+.create-project-label {
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #0f0f0f;
+}
+
+.create-project-select,
+.create-project-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.create-project-select {
+    background-color: #ddd8d8;
+}
+
+.create-project-select:focus,
+.create-project-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.create-project-button {
+    font-size: 1rem;
+    background-color: #383737;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+.create-project-button:hover {
+    background-color: #2c2b2c; 
+    color: #fff;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+/* Media Queries */
+
+/* Tablets (Portrait and Landscape) */
+@media (max-width: 1024px) {
+    .create-project-container {
+        padding: 15px;
+    }
+
+    .create-project-title {
+        font-size: 1.4em;
+    }
+
+    .create-project-select,
+    .create-project-input {
+        font-size: 0.9rem;
+    }
+
+    .create-project-button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 768px) {
+    .create-project-container {
+        padding: 15px;
+    }
+    
+    .create-project-title {
+        font-size: 1.2em;
+    }
+    
+    .create-project-select,
+    .create-project-input {
+        font-size: 0.8rem;
+    }
+    
+    .create-project-button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .create-project-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .create-project-title {
+        font-size: 1em;
+    }
+
+    .create-project-form {
+        padding: 0.5rem;
+    }
+
+    .create-project-label {
+        font-size: 0.9rem;
+    }
+
+    .create-project-select,
+    .create-project-input {
+        font-size: 0.9rem;
+    }
+
+    .create-project-button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,259 @@
+/* AssignTask.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.assign-task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.05); /* Light background with subtle contrast */
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.assign-task-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/project-manager_img.webp'); /* Adjust path as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Slight transparency for a professional backdrop */
+    z-index: -1; /* Ensure it is behind the content */
+}
+
+.assign-task-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.assign-task-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.assign-task-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+    width: 100%; /* Ensure elements use full container width */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.form-select:focus,
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.assign-task-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.assign-task-button:hover {
+    background-color: #0056b3;
+}
+
+.assign-task-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.go-back-button {
+    color: #fff;
+    background-color: #007bff;
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for spacing */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block; /* Align with other inline elements */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from text */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+    position: absolute; 
+    top: 20px; 
+    left: 20px; 
+}
+
+.go-back-button:hover {
+    background-color: #0056b3; /* Darker gray on hover */
+}
+
+.go-back-button:active {
+    background-color: #ccc; /* Even darker gray when active */
+}
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+    .assign-task-container {
+        padding: 10px;
+    }
+
+    .assign-task-content {
+        padding: 20px;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .assign-task-title {
+        font-size: 1.5rem;
+    }
+
+    .form-label {
+        font-size: 0.875rem;
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea {
+        padding: 10px;
+    }
+
+    .form-textarea {
+        height: 100px;
+    }
+
+    .assign-task-button {
+        padding: 10px 15px;
+        font-size: 0.875rem;
+    }
+
+    .go-back-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Tablets (600px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .assign-task-container {
+        padding: 15px;
+    }
+
+    .assign-task-content {
+        padding: 25px;
+        max-width: 90%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .assign-task-title {
+        font-size: 1.75rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea {
+        padding: 12px;
+    }
+
+    .form-textarea {
+        height: 110px;
+    }
+
+    .assign-task-button {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+
+    .go-back-button {
+        font-size: 15px;
+        padding: 9px 18px;
+    }
+}
+
+/* Desktop Devices (1024px and up) */
+@media (min-width: 1025px) {
+    .assign-task-container {
+        padding: 20px;
+    }
+
+    .assign-task-content {
+        padding: 30px;
+        max-width: 800px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .assign-task-title {
+        font-size: 2rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+    }
+
+    .form-select,
+    .form-input,
+    .form-textarea {
+        padding: 12px;
+    }
+
+    .form-textarea {
+        height: 120px;
+    }
+
+    .assign-task-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .go-back-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

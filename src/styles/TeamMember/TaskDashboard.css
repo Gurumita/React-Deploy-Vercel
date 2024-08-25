@@ -1,0 +1,302 @@
+/* Base styles */
+.task-dashboard-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #dfdfdffa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 70px;
+    box-sizing: border-box;
+}
+
+.project-selection {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.project-selection select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.project-selection select:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+.milestones-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Scrollable when content overflows */
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 20px;
+    gap: 20px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #007bff #f0f8ff; /* For Firefox */
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+.milestones-container::-webkit-scrollbar {
+    height: 12px; /* Height of the scrollbar */
+}
+
+.milestones-container::-webkit-scrollbar-track {
+    background: #f0f8ff; /* Track color */
+}
+
+.milestones-container::-webkit-scrollbar-thumb {
+    background: #007bff; /* Scrollbar color */
+    border-radius: 6px; /* Rounded corners */
+}
+
+.milestones-container::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+.milestone {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Increased padding */
+    width: 370px; /* Increased width */
+    height: 350px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.milestone:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.milestone-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 22px; /* Increased font size */
+    color: #007bff; /* Changed text color to blue */
+    text-align: center; /* Centered the text */
+}
+
+.milestone-description {
+    margin-bottom: 16px;
+    color: #555;
+    font-size: 16px; /* Increased font size */
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 300px; /* Max width */
+    min-height: 60px; /* Increased min-height */
+}
+
+.task-item:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-icon {
+    font-size: 24px; /* Increased icon size */
+}
+
+.task-button {
+    border: none;
+    background: none;
+    color: #007bff;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px; /* Increased font size */
+    transition: color 0.2s ease;
+}
+
+.task-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.task-timestamp {
+    font-size: 14px; /* Increased font size */
+    color: #888;
+    margin-top: 4px;
+}
+
+/* Task details overlay */
+.task-details-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.task-details {
+    position: relative;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
+    animation: slideIn 0.3s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+.task-detail {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.task-detail strong {
+    color: #0047ab; /* Deep blue for labels */
+}
+
+.task-details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-details-table th,
+.task-details-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.task-details-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+.task-details-table td {
+    text-align: left;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease;
+}
+
+/* Keyframes for slide-up animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+
+/* For tablets and small screens (min-width: 600px) */
+@media (max-width: 899px) {
+    .milestones-container {
+        flex-direction: column; /* Stacks items vertically */
+        max-width: 100%; /* Full width on smaller screens */
+        padding-bottom: 10px;
+    }
+
+    .milestone {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Adjust height to auto for smaller screens */
+    }
+
+    .task-item {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* For mobile devices (min-width: 300px) */
+@media (max-width: 599px) {
+    .milestones-container {
+        flex-direction: column; /* Stacks items vertically */
+        max-width: 100%; /* Full width on mobile screens */
+        padding-bottom: 10px;
+    }
+
+    .milestone {
+        width: 100%; /* Full width on mobile screens */
+        height: auto; /* Adjust height to auto for mobile screens */
+    }
+
+    .task-item {
+        width: 100%; /* Full width on mobile screens */
+        min-height: auto; /* Adjust min-height for mobile screens */
+    }
+}

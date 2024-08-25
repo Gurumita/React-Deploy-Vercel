@@ -1,0 +1,186 @@
+/* Base styles for Message component */
+.message-container {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    opacity: 0; /* Start with invisible */
+    transform: translateY(20px); /* Start with an offset */
+    animation: fadeInUp 0.5s ease forwards; /* Apply the fadeInUp animation */
+}
+
+.message-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.message-form {
+    display: flex;
+    flex-direction: column;
+    animation: fadeInUp 0.7s ease forwards; /* Fade in with a delay */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards; /* Staggered fade-in */
+}
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth focus effect */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Glowing effect on focus */
+    transform: scale(1.02); /* Slight scale up on focus */
+}
+
+.submit-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0047ab;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.submit-button:hover {
+    background-color: #003d91;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.submit-button:active {
+    transform: translateY(1px); /* Slight press on click */
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .message-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .message-title {
+        font-size: 1.4em;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 14px;
+    }
+
+    .form-textarea {
+        height: 80px;
+    }
+
+    .submit-button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .go-back-button {
+        top: auto;
+        bottom: 20px; /* Adjust bottom positioning */
+        left: 50%;
+        transform: translateX(-50%); /* Center the button horizontally */
+    }
+}
+
+/* Media Queries for Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .message-container {
+        width: 90%;
+        padding: 18px;
+    }
+
+    .message-title {
+        font-size: 1.5em;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 15px;
+    }
+
+    .form-textarea {
+        height: 90px;
+    }
+
+    .submit-button {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .go-back-button {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Media Queries for Desktops */
+@media (min-width: 1025px) {
+    .message-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .message-title {
+        font-size: 1.6em;
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 16px;
+    }
+
+    .form-textarea {
+        height: 100px;
+    }
+
+    .submit-button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .go-back-button {
+        position: absolute;
+        top: 20px; /* Adjust top positioning */
+        left: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,224 @@
+/* Container for the entire login page */
+#loginPageContainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container for the image section */
+#loginImageContainer {
+    flex: 2;
+    background: url('../../images/Login_Img.jpg') no-repeat center center;
+    background-size: cover;
+    width: 50%;
+    height: 100%; 
+    animation: slideInImage 1s ease-in-out;
+}
+
+/* Keyframe for slide-in effect from the left */
+@keyframes slideInImage {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Container for the form section */
+#loginFormContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 2rem;
+    height: 100%;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Keyframe for slide-in effect from the right */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Welcome message styling */
+#welcomeMessage {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: zoomIn 0.8s ease-in-out;
+}
+
+/* Keyframe for zoom-in effect */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#welcomeMessage h1 {
+    font-size: 2.5rem;
+    color: #ff69b4;
+    margin-bottom: 0.5rem;
+}
+
+#welcomeMessage p {
+    font-size: 1rem;
+}
+
+/* Styling for the login form */
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+#loginForm input {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    opacity: 0;
+    animation: fadeInInputs 0.8s ease-in-out forwards;
+}
+
+/* Keyframe for fading in input fields */
+@keyframes fadeInInputs {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#loginForm input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Styling for the login button */
+#loginForm button {
+    background: #ff2bca;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Remove continuous animation on hover */
+#loginForm button:hover {
+    background: #ff6f61;
+}
+
+/* Button animation on click */
+#loginForm button:active {
+    animation: pulse 0.5s;
+}
+
+/* Keyframe for pulsing effect on click */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Styling for the forgot password link */
+#forgotPasswordLink {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: #ff4b2b;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#forgotPasswordLink:hover {
+    text-decoration: underline;
+    background: rgba(255, 255, 255, 1);
+    color: #ff6f61;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 767px) { 
+    #loginPageContainer {
+        flex-direction: column;
+    }
+
+    #loginImageContainer {
+        width: 100%;
+        height: 50%;
+    }
+
+    #loginFormContainer {
+        width: 100%;
+        height: 50%; 
+    }
+}
+
+/* Responsive design for medium screens */
+@media (min-width: 768px) and (max-width: 1023px) { 
+    #loginImageContainer {
+        width: 50%;
+        height: 100%;
+    }
+
+    #loginFormContainer {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+/* Responsive design for large screens */
+@media (min-width: 1024px) {
+    #loginImageContainer {
+        width: 50%;
+        height: 100%; 
+    }
+
+    #loginFormContainer {
+        width: 50%;
+        height: 100%; 
+    }
+}
