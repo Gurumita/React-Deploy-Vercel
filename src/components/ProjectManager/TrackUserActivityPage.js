@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Select from 'react-select';
 import { useLocation } from 'react-router-dom';
 import '../../styles/ProjectManager/TrackUserActivityProject.css';
 
@@ -7,7 +6,7 @@ const TrackUserActivityPage = () => {
     const location = useLocation();
     const { username } = location.state || {};
     const [teamMembers, setTeamMembers] = useState([]);
-    const [selectedUser, setSelectedUser] = useState(null);
+    const [selectedUser, setSelectedUser] = useState('');
     const [activities, setActivities] = useState([]);
 
     useEffect(() => {
@@ -18,11 +17,7 @@ const TrackUserActivityPage = () => {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                const memberOptions = data.map(member => ({
-                    value: member.username,
-                    label: member.username,
-                }));
-                setTeamMembers(memberOptions);
+                setTeamMembers(data);
             } catch (error) {
                 console.error('Error fetching team members:', error);
             }
@@ -36,7 +31,7 @@ const TrackUserActivityPage = () => {
     const handleTrack = async () => {
         if (selectedUser) {
             try {
-                const response = await fetch(`https://revtaskman-bgf0cwfaaxg9b5e8.southindia-01.azurewebsites.net/tasks/by-username/${selectedUser.value}`);
+                const response = await fetch(`https://revtaskman-bgf0cwfaaxg9b5e8.southindia-01.azurewebsites.net/tasks/by-username/${selectedUser}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -53,14 +48,18 @@ const TrackUserActivityPage = () => {
             <h1 id="track-activity-title">Track User Activity</h1>
             <div id="track-form-group">
                 <label htmlFor="userSelect" id="track-label">Select User</label>
-                <Select
+                <select
                     id="userSelect"
                     value={selectedUser}
-                    onChange={setSelectedUser}
-                    options={teamMembers}
-                    placeholder="Select a user"
-                    isClearable
-                />
+                    onChange={(e) => setSelectedUser(e.target.value)}
+                >
+                    <option value="" disabled>Select a user</option>
+                    {teamMembers.map(member => (
+                        <option key={member.username} value={member.username}>
+                            {member.username}
+                        </option>
+                    ))}
+                </select>
                 <button id="trackButton" onClick={handleTrack}>Track</button>
             </div>
             <div id="activityContainer">
@@ -81,7 +80,7 @@ const TrackUserActivityPage = () => {
                         </div>
                     ))
                 ) : (
-                    <p>Select User to display activity</p>
+                    <p>Select a user to display activity</p>
                 )}
             </div>
         </div>
